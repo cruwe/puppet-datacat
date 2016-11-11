@@ -9,7 +9,8 @@ end
 
 group :development do
   gem 'pry'
-  gem 'pry-debugger'
+  gem 'pry-debugger', :platform => :mri_19
+  gem 'pry-byebug',   :platform => [:mri_20, :mri_21 ,:mri_22, :mri_23]
   gem 'rb-readline'
   gem 'awesome_print'
   gem 'rspec-system-puppet', '~>2.0'
