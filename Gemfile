@@ -9,8 +9,11 @@ end
 
 group :development do
   gem 'pry'
-  gem 'pry-debugger', :platform => :mri_19
-  gem 'pry-byebug',   :platform => [:mri_20, :mri_21 ,:mri_22, :mri_23]
+  if RUBY_VERSION <= '1.9.3'
+    gem 'pry-debugger'
+  else
+    gem 'pry-byebug'
+  end
   gem 'rb-readline'
   gem 'awesome_print'
   gem 'rspec-system-puppet', '~>2.0'
